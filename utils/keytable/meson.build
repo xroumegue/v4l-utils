@@ -21,7 +21,7 @@ ir_keytable_c_args = [
     '-DIR_KEYTABLE_USER_DIR="@0@"'.format(ir_keytable_user_dir),
 ]
 
-if not get_option('bpf').disabled() and prog_clang.found() and dep_libelf.found()
+if dep_libbpf.found() and dep_libelf.found() and prog_clang.found()
     ir_keytable_sources += files(
         'bpf_load.c',
         'bpf_load.h',
