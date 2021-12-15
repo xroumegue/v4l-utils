@@ -5,6 +5,7 @@ cec_compliance_sources = files(
     'cec-test-audio.cpp',
     'cec-test-fuzzing.cpp',
     'cec-test-power.cpp',
+    'cec-test-tuner-record-timer.cpp',
     'cec-test.cpp',
 )
 
