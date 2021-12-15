@@ -283,14 +283,14 @@ add_project_link_arguments(cpp_arguments, language : 'cpp')
 
 git_sha = run_command(prog_git, '-C', meson.build_root(), 'rev-parse', '--short=12', 'HEAD',
                       check : true).stdout().strip()
-conf.set_quoted('GIT_SHA', git_sha)
+conf.set('GIT_SHA', git_sha)
 git_commit_cnt = run_command(prog_git, '-C', meson.build_root(), 'rev-list', '--count', 'HEAD',
                              check : true).stdout().strip()
-conf.set_quoted('GIT_COMMIT_CNT', '-' + git_commit_cnt)
+conf.set('GIT_COMMIT_CNT', '-' + git_commit_cnt)
 git_commit_date = run_command(prog_git, '-C', meson.build_root(), 'show', '--quiet',
                               '--date=format-local:%F %T', '--format=%cd',
                               env : ['TZ=UTC'], check : true).stdout().strip()
-conf.set_quoted('GIT_COMMIT_DATE', git_commit_date)
+conf.set('GIT_COMMIT_DATE', git_commit_date)
 
 man_pages = []
 
